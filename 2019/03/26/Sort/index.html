@@ -6,7 +6,8 @@
     <title>Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content>
-    <meta name="description" content>
+    <meta name="description" content="JavaScript实现排序算法1. 插入排序（简单插入排序）从整个待排序列中选出一个元素插入到已经有序的子序列中去，得到一个有序的、元素加一的子序列，直到整个序列的待插入元素个数为0，则整个序列全部有序。（一般选择序列的第一个元素作为有序序列，再将后面的元素插入到前面的有序序列中）
+1234567891011121314151617function InsertSort(array) &amp;#123; var len = array.length, i, j, tmp, result;  // 设置数组副本 result = array.slice(0); for(i=1; i &amp;lt; len; i++)&amp;#123; t...">
     
         <link rel="icon" href="/favicon.ico">
     
@@ -40,26 +41,18 @@
 <div id="content-outer">
     <div id="content-inner">
         <div class="clearfix">
-    
-    <div id="recent-posts">
-        
-            <div class="post-item">
-                <h1>
-                    <a href="/2019/03/26/Sort/">
-                        
-                    </a>
-                </h1>
-                <div class="create">
-                    <span>Created</span>
-                    
-                        <time datetime="2019-03-26T10:14:18.866Z">
-                            2019-03-26
-                        </time>
-                    
-                    
-                </div>
-                
-                    <h1 id="JavaScript实现排序算法"><a href="#JavaScript实现排序算法" class="headerlink" title="JavaScript实现排序算法"></a>JavaScript实现排序算法</h1><h2 id="1-插入排序（简单插入排序）"><a href="#1-插入排序（简单插入排序）" class="headerlink" title="1. 插入排序（简单插入排序）"></a>1. 插入排序（简单插入排序）</h2><p>从整个待排序列中选出一个元素插入到已经有序的子序列中去，得到一个有序的、元素加一的子序列，直到整个序列的待插入元素个数为0，则整个序列全部有序。（一般选择序列的第一个元素作为有序序列，再将后面的元素插入到前面的有序序列中）</p>
+    <article id="post">
+        <h1></h1>
+        <div class="create">
+            <span>Created</span>
+            
+                <time datetime="2019-03-26T10:14:18.866Z">
+                    2019-03-26
+                </time>
+            
+            
+        </div>
+        <h1 id="JavaScript实现排序算法"><a href="#JavaScript实现排序算法" class="headerlink" title="JavaScript实现排序算法"></a>JavaScript实现排序算法</h1><h2 id="1-插入排序（简单插入排序）"><a href="#1-插入排序（简单插入排序）" class="headerlink" title="1. 插入排序（简单插入排序）"></a>1. 插入排序（简单插入排序）</h2><p>从整个待排序列中选出一个元素插入到已经有序的子序列中去，得到一个有序的、元素加一的子序列，直到整个序列的待插入元素个数为0，则整个序列全部有序。（一般选择序列的第一个元素作为有序序列，再将后面的元素插入到前面的有序序列中）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function InsertSort(array) &#123;</span><br><span class="line"> var len = array.length,</span><br><span class="line"> i, j, tmp, result;</span><br><span class="line"> </span><br><span class="line"> // 设置数组副本</span><br><span class="line"> result = array.slice(0);</span><br><span class="line"> for(i=1; i &lt; len; i++)&#123;</span><br><span class="line"> tmp = result[i];</span><br><span class="line"> j = i - 1;</span><br><span class="line"> while(j&gt;=0 &amp;&amp; tmp &lt; result[j])&#123;</span><br><span class="line"> result[j+1] = result[j];</span><br><span class="line"> j--;</span><br><span class="line"> &#125;</span><br><span class="line"> result[j+1] = tmp;</span><br><span class="line"> &#125;</span><br><span class="line"> return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2. 冒泡排序"></a>2. 冒泡排序</h2><p>两两比较，根据大小交换位置,遍历数组，每次遍历就将最大（或最小）值推至最前。越往后遍历查询次数越少</p>
@@ -106,241 +99,34 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function binaryInsertSort( arr )&#123;</span><br><span class="line">    for( var i = 0 ; i &lt; arr.length ; i++ )&#123;</span><br><span class="line">        var key = arr[ i ],</span><br><span class="line">        left = 0,</span><br><span class="line">        right = i - 1;</span><br><span class="line">        while( left &lt;= right )&#123;</span><br><span class="line">            var middle = parseInt( ( left + right ) / 2 );</span><br><span class="line">            if( key &lt; arr[ middle ] )&#123;</span><br><span class="line">                right = middle - 1;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                left = middle + 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for( var j = i -1 ; j &gt;=left ; j-- )&#123;</span><br><span class="line">            arr[ j + 1 ] = arr[ j ];</span><br><span class="line">        &#125;</span><br><span class="line">        arr[ left ] = key;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
-                
-                <div class="readmore">
-                    <a href="/2019/03/26/Sort/">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        
-            <div class="post-item">
-                <h1>
-                    <a href="/2019/03/25/BuildBlog/">
-                        
-                    </a>
-                </h1>
-                <div class="create">
-                    <span>Created</span>
-                    
-                        <time datetime="2019-03-25T10:22:02.534Z">
-                            2019-03-25
-                        </time>
-                    
-                    
-                </div>
-                
-                    <h1 id="使用-GitHub-Hexo-搭建个人博客"><a href="#使用-GitHub-Hexo-搭建个人博客" class="headerlink" title="使用 GitHub + Hexo 搭建个人博客"></a>使用 GitHub + Hexo 搭建个人博客</h1><h2 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h2><ul>
-<li>登录GitHub，点击 GitHub 中的 New repository 创建新仓库，仓库名应该为：用户名 .github.io 。这里用户名是 GitHub 帐号名称，这是固定写法。</li>
-<li>我的仓库名为：liuliuliuliuliu666.github.io<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2></li>
-<li><p>在终端进行操作，设置 user.name 和 user.email 配置信息，设置为全局</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过注册的邮箱生成 ssh 密钥文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>直接三个回车，不需要设置密码，最后得到了两个文件：id_rsa和id_rsa.pub</p>
-</li>
-<li>打开 id_rsa.pub 文件，将里面的内容全部复制，粘贴到GitHub的SSH and GPG Keys的框里</li>
-<li>添加好 SSH Key后，进行测试</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选择 yes，如果看到Hi后面是你的用户名，就说明成功了<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2></li>
-<li>可以在<a href="https://nodejs.org/en/download/进行对应电脑版本的下载" target="_blank" rel="noopener">https://nodejs.org/en/download/进行对应电脑版本的下载</a><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="使用Hexo"><a href="#使用Hexo" class="headerlink" title="使用Hexo"></a>使用Hexo</h2><ul>
-<li><p>首先初始化博客</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init myOwnBlog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后进入文件夹 myOwnBlog,输入</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<ul>
-<li>接着在浏览器输入地址：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:4000</span><br></pre></td></tr></table></figure>
-<ul>
-<li>出现Hexo的界面即表示博客就已经搭建好了，接下来就是去完善它<h2 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h2><h3 id="直接导入文章"><a href="#直接导入文章" class="headerlink" title="直接导入文章"></a>直接导入文章</h3></li>
-<li>直接将平时写的md格式文章直接导入到 _posts  文件夹里即可<h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3></li>
-<li>可以在命令中指定文章的布局（layout），默认为 post，可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="生成网页"><a href="#生成网页" class="headerlink" title="生成网页"></a>生成网页</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务预览文章"><a href="#启动服务预览文章" class="headerlink" title="启动服务预览文章"></a>启动服务预览文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -p 5000</span><br></pre></td></tr></table></figure>
-<h2 id="将网站部署到服务器上"><a href="#将网站部署到服务器上" class="headerlink" title="将网站部署到服务器上"></a>将网站部署到服务器上</h2><ul>
-<li>在开始之前，必须先在 _config.yml 中修改参数，一个正确的部署配置中至少要有 type，repo，branch 参数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: https://github.com/liuliuliuliuliu666/liuliuliuliuliu666.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-<ul>
-<li>部署命令：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<ul>
-<li>部署好后就可以在浏览器输入你的GitHub名称.github.io，这样就可以进入你的博客了<h2 id="更换Hexo主题"><a href="#更换Hexo主题" class="headerlink" title="更换Hexo主题"></a>更换Hexo主题</h2></li>
-<li>可以在 <a href="https://hexo.io/themes/index.html进行主题的挑选更换，将下载的主题放入themes文件夹内，同时在_config.yml中进行主题修改" target="_blank" rel="noopener">https://hexo.io/themes/index.html进行主题的挑选更换，将下载的主题放入themes文件夹内，同时在_config.yml中进行主题修改</a></li>
-<li>按照主题安装说明进行简单的设置即可</li>
-</ul>
-
-                
-                <div class="readmore">
-                    <a href="/2019/03/25/BuildBlog/">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        
-            <div class="post-item">
-                <h1>
-                    <a href="/2019/03/25/myFirstBlog/">
-                        myFirstBlog
-                    </a>
-                </h1>
-                <div class="create">
-                    <span>Created</span>
-                    
-                        <time datetime="2019-03-25T04:13:13.000Z">
-                            2019-03-25
-                        </time>
-                    
-                    
-                </div>
-                
-                    
-                
-                <div class="readmore">
-                    <a href="/2019/03/25/myFirstBlog/">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        
-            <div class="post-item">
-                <h1>
-                    <a href="/2019/03/25/hello-world/">
-                        Hello World
-                    </a>
-                </h1>
-                <div class="create">
-                    <span>Created</span>
-                    
-                        <time datetime="2019-03-25T03:54:14.664Z">
-                            2019-03-25
-                        </time>
-                    
-                    
-                </div>
-                
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-                
-                <div class="readmore">
-                    <a href="/2019/03/25/hello-world/">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        
-    </div>
-
-
-    <div id="content-aside">
-    <div class="content-aside-owner">
-        <div id="owner">
-    <div class="avatar-bg">
-        <div class="index-page">
-            <div class="banner">
-                <div class="slide slide1">
-                    <div class="bg-wrapper">
-                        <div class="bg" id="container_left">
-                            <div id="canvas_left"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide slide2">
-                    <div class="bg-wrapper">
-                        <div class="bg" id="container_right">
-                            <div id="canvas_right"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            
         </div>
-    </div>
-    <a href="/"><img class="avatar" src="/images/avatar.jpg" alt></a>
-    <a href="/"><h3 class="author">John Doe</h3></a>
-    <h4></h4>
-    <div class="social">
+        <div class="bottom-line"></div>
         
-            
-              <a href="https://liuliuliuliuliu666.github.io/" title="github" class="fa fa-github" target="_blank"></a>
-            
+    <nav id="article-nav">
         
-            
-              <a href="#" title="weibo" class="fa fa-weibo" target="_blank"></a>
-            
+        
+            <a href="/2019/03/25/BuildBlog/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">&lt;</strong>
+                <span class="article-nav-title">
+                    
+                    no title
+                
+            </span></a>
+        
+    </nav>
+
+
+        
+    </article>
+    <div id="toc">
+        
+            <h2>Table of Contents</h2>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript实现排序算法"><span class="toc-number">1.</span> <span class="toc-text">JavaScript实现排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-插入排序（简单插入排序）"><span class="toc-number">1.1.</span> <span class="toc-text">1. 插入排序（简单插入排序）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-冒泡排序"><span class="toc-number">1.2.</span> <span class="toc-text">2. 冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-改进版冒泡排序"><span class="toc-number">1.3.</span> <span class="toc-text">3. 改进版冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-快速排序"><span class="toc-number">1.4.</span> <span class="toc-text">4. 快速排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-选择排序"><span class="toc-number">1.5.</span> <span class="toc-text">5. 选择排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-希尔排序"><span class="toc-number">1.6.</span> <span class="toc-text">6. 希尔排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-归并排序"><span class="toc-number">1.7.</span> <span class="toc-text">7. 归并排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-堆排序"><span class="toc-number">1.8.</span> <span class="toc-text">8. 堆排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-二分插入排序"><span class="toc-number">1.9.</span> <span class="toc-text">9. 二分插入排序</span></a></li></ol></li></ol>
         
     </div>
 </div>
-    </div>
-    
-        <div class="content-aside-about">
-            <h2>
-                <a href="/about">About</a>
-            </h2>
-        </div>
-    
-    <div class="content-aside-tags">
-        <h2>
-            <a href="/tags">
-                Tags
-                <sup style="font-size: 12px">
-                    [0]
-                </sup>
-            </a>
-        </h2>
-    </div>
-    
-<aside id="categories">
-    <h2>Categories</h2>
-    
-        <p>None.</p>
-    
-</aside>
-
-    
-<aside id="acchives">
-    <h2>Archives</h2>
-    
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
-    
-</aside>
-
-</div>
-
-</div>
-<nav id="pagination" class="clearfix">
-    <span class="page-number current">1</span>
-</nav>
 
     </div>
 </div>
@@ -353,8 +139,8 @@
 <script src="/lib/js/waterrippleeffect.min.js"></script>
 <script src="/js/header-bg.main.js"></script>
 
-    <script src="/lib/js/cav.js"></script>
-    <script src="/js/avatar-bg.main.js"></script>
+    <script src="/lib/js/smooth-scroll.min.js"></script>
+    <script src="/js/toc.main.js"></script>
 
 </body>
 </html>
